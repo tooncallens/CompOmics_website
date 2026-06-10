@@ -482,6 +482,19 @@ blockquote {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease;
+
+  // clickable: lift slightly, sharpen photo, tint the name
+  &:hover {
+    transform: translateY(-3px);
+    text-decoration: none;
+    color: inherit;
+
+    .team-photo { filter: grayscale(0%); border-color: $primary; }
+    .team-name  { color: $primary; }
+  }
 }
 
 .team-photo {
