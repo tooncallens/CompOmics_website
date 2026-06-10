@@ -26,29 +26,26 @@ We are committed to open science: all our software, datasets, and workflows are 
 
 ---
 
-::: {.grid .stats-row}
-
-::: {.g-col-6 .g-col-md-3 .stat-tile}
-[3]{.stat-number}
-[Research Lines]{.stat-label}
-:::
-
-::: {.g-col-6 .g-col-md-3 .stat-tile}
-[524]{.stat-number}
-[Publications]{.stat-label}
-:::
-
-::: {.g-col-6 .g-col-md-3 .stat-tile}
-[22]{.stat-number}
-[Tools]{.stat-label}
-:::
-
-::: {.g-col-6 .g-col-md-3 .stat-tile}
-[27]{.stat-number}
-[Members]{.stat-label}
-:::
-
-:::
+```{=html}
+<div class="grid stats-row">
+  <a href="research.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
+    <span class="stat-number">3</span>
+    <span class="stat-label">Research Lines</span>
+  </a>
+  <a href="publications.html" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
+    <span class="stat-number">524</span>
+    <span class="stat-label">Publications</span>
+  </a>
+  <a href="tools/" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
+    <span class="stat-number">22</span>
+    <span class="stat-label">Tools</span>
+  </a>
+  <a href="team/" class="g-col-6 g-col-md-3 stat-tile stat-tile-link">
+    <span class="stat-number">27</span>
+    <span class="stat-label">Members</span>
+  </a>
+</div>
+```
 
 ---
 

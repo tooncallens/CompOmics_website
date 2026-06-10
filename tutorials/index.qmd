@@ -1,0 +1,9 @@
+---
+title: "Tutorials"
+listing:
+  contents: "posts/*.qmd"
+  type: default
+  fields: [date, title, description, categories]
+  categories: true
+  sort: "date desc"
+---

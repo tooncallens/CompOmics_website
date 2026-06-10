@@ -186,6 +186,21 @@ pre.sourceCode {
   }
 }
 
+a.stat-tile-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(39, 107, 166, 0.15);
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
 // ── Nav tiles ────────────────────────────────────────────────────────────────
 .nav-tiles-row {
   display: flex;

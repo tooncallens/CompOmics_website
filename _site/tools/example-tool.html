@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Open-source tools for mass spectrometry-based proteomics, developed by the CompOmics group at VIB-UGent.">
+<meta name="dcterms.date" content="2024-01-01">
+<meta name="description" content="A short one-line description of what this tool does.">
 
-<title>Tools &amp; Software – CompOmics</title>
+<title>Example Tool – CompOmics</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -41,10 +77,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d58168542e1b05ab509c510cbeb13b13.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d58168542e1b05ab509c510cbeb13b13.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-88e37a8f5ac5aee93fe4de4f1f74577c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-d58168542e1b05ab509c510cbeb13b13.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ca2cd98d9063e9ae40c601beba500e0c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-eae988667d2731cc649bca3e3c4ae9af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a0b158bfe823ef55f796bb7e46cee4ae.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-eae988667d2731cc649bca3e3c4ae9af.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -76,7 +116,169 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -86,9 +288,6 @@ ul.task-list li input[type="checkbox"] {
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     <img src="../assets/images/CompOmics_neg.png" alt="CompOmics" class="navbar-logo light-content">
     <img src="../assets/images/CompOmics_neg.png" alt="CompOmics" class="navbar-logo dark-content">
-    </a>
-    <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">CompOmics</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -115,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../news/index.html"> 
-<span class="menu-text">News</span></a>
+<span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/compomics"> <i class="bi bi-github" role="img" aria-label="GitHub">
@@ -125,6 +324,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -133,18 +333,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#quick-start" id="toc-quick-start" class="nav-link" data-scroll-target="#quick-start">Quick Start</a></li>
+  <li><a href="#citation" id="toc-citation" class="nav-link" data-scroll-target="#citation">Citation</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tools &amp; Software</h1>
-</div>
+<h1 class="title">Example Tool</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">identification</div>
+    <div class="quarto-category">DDA</div>
+  </div>
+  </div>
 
 <div>
   <div class="description">
-    Open-source tools for mass spectrometry-based proteomics, developed by the CompOmics group at VIB-UGent.
+    A short one-line description of what this tool does.
   </div>
 </div>
 
@@ -152,6 +369,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 1, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -161,406 +384,54 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>All tools are freely available under permissive licences. Source code is on <a href="https://github.com/compomics">GitHub</a>.</p>
-<style>
-.tools-page { margin-top: 2rem; }
-
-.cat-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #0096C7;
-  margin: 2.5rem 0 0.75rem;
-  padding-bottom: 8px;
-  border-bottom: 1px solid #e0e8f0;
-}
-
-.tool-row {
-  display: grid;
-  grid-template-columns: 200px 1fr 200px;
-  gap: 1.5rem;
-  align-items: start;
-  padding: 1.25rem;
-  margin-bottom: 10px;
-  border: 0.5px solid #dde6ef;
-  border-radius: 12px;
-  background: #ffffff;
-  transition: border-color 0.2s;
-}
-.tool-row:hover { border-color: #b0c8dd; }
-
-.tool-id { display: flex; align-items: flex-start; gap: 10px; }
-
-.tool-icon-wrap {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; flex-shrink: 0;
-}
-
-.tool-name {
-  font-size: 15px; font-weight: 600;
-  margin: 0 0 4px; line-height: 1.3;
-}
-
-.tool-tag {
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 0.5px;
-  padding: 2px 8px;
-  border-radius: 20px;
-  display: inline-block;
-}
-
-.tool-desc {
-  font-size: 13.5px;
-  line-height: 1.65;
-  margin: 0 0 10px;
-  color: #415a77;
-}
-
-.tool-links { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
-.tool-links a {
-  font-size: 12px; font-weight: 500;
-  color: #0096C7; text-decoration: none;
-  display: inline-flex; align-items: center; gap: 3px;
-}
-.tool-links a:hover { text-decoration: underline; }
-
-.tool-citation {
-  font-size: 12px; color: #778da9;
-  border-left: 2px solid #dde6ef;
-  padding-left: 8px; margin: 0;
-  line-height: 1.5;
-}
-.tool-citation a { color: #778da9; }
-
-.meta-label {
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: #0096C7; margin-bottom: 10px;
-}
-
-.dev-list { display: flex; flex-direction: column; gap: 8px; }
-
-.dev-item { display: flex; align-items: center; gap: 8px; }
-
-.dev-avatar {
-  width: 30px; height: 30px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 600; color: white; flex-shrink: 0;
-}
-
-.dev-name { font-size: 13px; font-weight: 500; margin: 0; line-height: 1.2; }
-.dev-role { font-size: 11px; color: #778da9; margin: 0; }
-
-@media (max-width: 800px) {
-  .tool-row { grid-template-columns: 1fr; }
-}
-</style>
-
-<div class="tools-page">
-
-<!-- ── PREDICTION ── -->
-<div class="cat-label">Prediction</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#e0f7fa;">⏱️</div>
-    <div>
-      <p class="tool-name">DeepLC</p>
-      <span class="tool-tag" style="background:#e0f7fa; color:#006888;">Retention time</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">Predicts when peptides will elute from the LC column during a mass spectrometry run. Handles modified peptides accurately — even modifications never seen during training. Adapts to new instruments and setups through transfer learning, requiring only a small number of example peptides.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/DeepLC">⬡ GitHub</a>
-      <a href="https://compomics.github.io/DeepLC">Docs</a>
-      <a href="https://pypi.org/project/deeplc/">PyPI</a>
-      <a href="https://iomics.ugent.be/deeplc/">Web app</a>
-    </div>
-    <p class="tool-citation">
-      Bouwmeester et al. (2021). <em>DeepLC can predict retention times for peptides that carry as-yet unseen modifications.</em> Nature Methods. <a href="https://doi.org/10.1038/s41592-021-01301-5">10.1038/s41592-021-01301-5</a><br>
-      Bouwmeester, Nameni et al. (2026). <em>Transfer learning in DeepLC improves LC retention time prediction.</em> Nature Communications. <a href="https://doi.org/10.1038/s41467-026-68981-5">10.1038/s41467-026-68981-5</a>
-    </p>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#0096C7;">RB</div>
-        <div><p class="dev-name">Robbin Bouwmeester</p><p class="dev-role">Lead developer</p></div>
-      </div>
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#415a77;">RG</div>
-        <div><p class="dev-name">Ralf Gabriels</p><p class="dev-role">Contributor</p></div>
-      </div>
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#415a77;">SD</div>
-        <div><p class="dev-name">Sven Degroeve</p><p class="dev-role">Contributor</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#e8f5e9;">📊</div>
-    <div>
-      <p class="tool-name">MS²PIP</p>
-      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Fragment intensity</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">Predicts fragment ion peak intensities from peptide sequence alone. Used to build in silico spectral libraries and to power the MS²Rescore rescoring pipeline. Fine-tuning for user-defined modifications is available through MS²DIP.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/ms2pip">⬡ GitHub</a>
-      <a href="https://iomics.ugent.be/ms2pip/">Web app</a>
-    </div>
-    <p class="tool-citation">
-      Degroeve &amp; Martens (2013). <em>MS²PIP: a tool for MS/MS peak intensity prediction.</em> Bioinformatics. <a href="https://doi.org/10.1093/bioinformatics/btt355">10.1093/bioinformatics/btt355</a>
-    </p>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#2e7d32;">SD</div>
-        <div><p class="dev-name">Sven Degroeve</p><p class="dev-role">Original author</p></div>
-      </div>
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#415a77;">AD</div>
-        <div><p class="dev-name">Arthur Declercq</p><p class="dev-role">Lead developer</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#e8f5e9;">💨</div>
-    <div>
-      <p class="tool-name">IM2Deep</p>
-      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Ion mobility</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">Predicts collisional cross-section (CCS) values for peptides, including multiply modified ones. Enables confident ion mobility filtering in DDA and DIA workflows.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/im2deep">⬡ GitHub</a>
-    </div>
-    <p class="tool-citation">
-      Declercq et al. (2024). <em>IM2Deep: predicting collisional cross sections for multi-modified peptides.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/acs.jproteome.4c00098">10.1021/acs.jproteome.4c00098</a>
-    </p>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#415a77;">AD</div>
-        <div><p class="dev-name">Arthur Declercq</p><p class="dev-role">Lead developer</p></div>
-      </div>
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#0096C7;">RB</div>
-        <div><p class="dev-name">Robbin Bouwmeester</p><p class="dev-role">Contributor</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── RESCORING ── -->
-<div class="cat-label">Rescoring</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#ede7f6;">🏆</div>
-    <div>
-      <p class="tool-name">MS²Rescore</p>
-      <span class="tool-tag" style="background:#ede7f6; color:#4527a0;">PSM rescoring</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">Rescores peptide-spectrum matches by combining predicted LC-MS/MS features — retention time, fragment intensities, and ion mobility — with observed features. Substantially increases the number of confident identifications compared to search engine scores alone. Validated for immunopeptidomics and metaproteomics.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/ms2rescore">⬡ GitHub</a>
-      <a href="https://ms2rescore.readthedocs.io">Docs</a>
-    </div>
-    <p class="tool-citation">
-      Declercq et al. (2022). <em>MS²Rescore: data-driven rescoring dramatically boosts immunopeptide identification rates.</em> Molecular &amp; Cellular Proteomics. <a href="https://doi.org/10.1016/j.mcpro.2022.100266">10.1016/j.mcpro.2022.100266</a>
-    </p>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#7c4dff;">RG</div>
-        <div><p class="dev-name">Ralf Gabriels</p><p class="dev-role">Lead developer</p></div>
-      </div>
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#415a77;">AD</div>
-        <div><p class="dev-name">Arthur Declercq</p><p class="dev-role">Contributor</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── DATA STANDARDS ── -->
-<div class="cat-label">Data Standards &amp; Utilities</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#fff8e1;">🔧</div>
-    <div>
-      <p class="tool-name">psm_utils</p>
-      <span class="tool-tag" style="background:#fff8e1; color:#e65100;">PSM handling</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">A Python library for parsing, converting, and handling peptide-spectrum matches from any major search engine. Provides a unified PSM object model and format-agnostic I/O for building analysis pipelines.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/psm_utils">⬡ GitHub</a>
-      <a href="https://psm-utils.readthedocs.io">Docs</a>
-      <a href="https://pypi.org/project/psm-utils/">PyPI</a>
-    </div>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#e65100;">RG</div>
-        <div><p class="dev-name">Ralf Gabriels</p><p class="dev-role">Lead developer</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#fff8e1;">🗂️</div>
-    <div>
-      <p class="tool-name">lesSDRF</p>
-      <span class="tool-tag" style="background:#fff8e1; color:#e65100;">Metadata</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">An interactive desktop app for annotating proteomics experiments in the SDRF format. Guides users through ontology-compliant metadata entry. HAMLET extends this with LLM-based pre-filling from manuscript text.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/lesSDRF">⬡ GitHub</a>
-      <a href="https://lessdrf.streamlit.app/">Web app</a>
-    </div>
-    <p class="tool-citation">
-      Van Puyvelde et al. (2022). <em>lesSDRF: a desktop app for SDRF proteomics metadata annotation.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/acs.jproteome.2c00120">10.1021/acs.jproteome.2c00120</a>
-    </p>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#e65100;">SV</div>
-        <div><p class="dev-name">Sander Van Puyvelde</p><p class="dev-role">Lead developer</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#fff8e1;">📂</div>
-    <div>
-      <p class="tool-name">Thermo Raw File Parser</p>
-      <span class="tool-tag" style="background:#fff8e1; color:#e65100;">File conversion</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">Converts Thermo <code>.raw</code> files to open formats (mzML, MGF, or Parquet) on Windows, macOS, and Linux. Widely used as a preprocessing step in proteomics pipelines.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/ThermoRawFileParser">⬡ GitHub</a>
-    </div>
-    <p class="tool-citation">
-      Hulstaert et al. (2020). <em>ThermoRawFileParser: modular, scalable, and cross-platform RAW file conversion.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/acs.jproteome.9b00328">10.1021/acs.jproteome.9b00328</a>
-    </p>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#e65100;">NH</div>
-        <div><p class="dev-name">Niels Hulstaert</p><p class="dev-role">Lead developer</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ── TAXONOMY ── -->
-<div class="cat-label">Taxonomy &amp; Metaproteomics</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#e8f5e9;">🌿</div>
-    <div>
-      <p class="tool-name">Unipept</p>
-      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Metaproteomics</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">Tryptic peptide-based functional and taxonomic analysis of metaproteome samples. Exposes a public API handling millions of queries per month. Integrates with major proteomics workflows via Python and R clients.</p>
-    <div class="tool-links">
-      <a href="https://github.com/unipept/unipept">⬡ GitHub</a>
-      <a href="https://unipept.ugent.be/">Web app</a>
-      <a href="https://unipept.ugent.be/apidocs">API docs</a>
-    </div>
-    <p class="tool-citation">
-      Mesuere et al. (2012). <em>Unipept: tryptic peptide-based biodiversity analysis of metaproteome samples.</em> Journal of Proteome Research. <a href="https://doi.org/10.1021/pr300576s">10.1021/pr300576s</a>
-    </p>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#2e7d32;">BM</div>
-        <div><p class="dev-name">Bart Mesuere</p><p class="dev-role">Lead developer</p></div>
-      </div>
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#415a77;">TV</div>
-        <div><p class="dev-name">Tibo Vande Moortele</p><p class="dev-role">Contributor</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="tool-row">
-  <div class="tool-id">
-    <div class="tool-icon-wrap" style="background:#e8f5e9;">🎲</div>
-    <div>
-      <p class="tool-name">Peptonizer2000</p>
-      <span class="tool-tag" style="background:#e8f5e9; color:#1b5e20;">Taxonomy</span>
-    </div>
-  </div>
-  <div>
-    <p class="tool-desc">Provides probabilistic taxon confidence scores for metaproteomics using a Bayesian network approach. Propagates peptide-level evidence into organism-level posteriors, giving statistically grounded taxon assignments in complex microbial community samples.</p>
-    <div class="tool-links">
-      <a href="https://github.com/compomics/Peptonizer2000">⬡ GitHub</a>
-    </div>
-  </div>
-  <div>
-    <div class="meta-label">Developers</div>
-    <div class="dev-list">
-      <div class="dev-item">
-        <div class="dev-avatar" style="background:#2e7d32;">TV</div>
-        <div><p class="dev-name">Tibo Vande Moortele</p><p class="dev-role">Lead developer</p></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>Brief description of the tool: what problem it solves, who it is for, and what makes it distinctive.</p>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install example-tool</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="quick-start" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start">Quick Start</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> example_tool</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># minimal usage example</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="citation" class="level2">
+<h2 class="anchored" data-anchor-id="citation">Citation</h2>
+<p>If you use this tool, please cite:</p>
+<blockquote class="blockquote">
+<p>Author et al.&nbsp;(year). <em>Title.</em> Journal. DOI: <a href="https://doi.org">10.xxxx/xxxxx</a></p>
+</blockquote>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/compomics/example-tool">GitHub</a></li>
+<li><a href="https://example-tool.readthedocs.io">Documentation</a></li>
+<li><a href="https://pypi.org/project/example-tool/">PyPI</a></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -979,6 +850,17 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('a[href]').forEach(function(a) {
+    var href = a.getAttribute('href');
+    if (href && (href.startsWith('http://') || href.startsWith('https://')) && !href.includes(location.hostname)) {
+      a.setAttribute('target', '_blank');
+      a.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
+});
+</script>
 
 
 

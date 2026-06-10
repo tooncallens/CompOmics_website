@@ -10,6 +10,9 @@
     "tools\\index.qmd": [
       "*.qmd",
       "!index.qmd"
+    ],
+    "tutorials\\index.qmd": [
+      "posts/*.qmd"
     ]
   }
 }
